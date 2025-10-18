@@ -6,8 +6,10 @@ import {
 } from "@/components/breadcrumbs";
 import { ContentLink } from "@/components/content-link";
 import { Logo } from "@/components/logo";
+import { ModuleDownloadButton } from "@/components/ModuleDownloadButton";
 import { PageSection } from "@/components/page-section";
 import { SidebarLayoutContent } from "@/components/sidebar-layout";
+import { getCourseModules } from "@/data/course";
 import { getModules, type Module } from "@/data/lessons";
 import { BookIcon } from "@/icons/book-icon";
 import { LessonsIcon } from "@/icons/lessons-icon";
@@ -23,6 +25,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   const modules = await getModules();
+  const courseModules = getCourseModules();
   const lessons = modules.flatMap(({ lessons }) => lessons);
 
   return (
@@ -78,35 +81,49 @@ export default async function Page() {
             </div>
 
             <div className="grid grid-cols-1 gap-y-16 pb-10 sm:px-4">
-              {modules.map((module: Module, index: number) => (
-                <PageSection
-                  key={module.id}
-                  id={module.id}
-                  title={`Part ${index + 1}`}
-                >
-                  <div className="max-w-2xl">
-                    <h2 className="text-2xl/7 font-medium tracking-tight text-pretty text-gray-950 dark:text-white">
-                      {module.title}
-                    </h2>
-                    <p className="mt-4 text-base/7 text-gray-700 sm:text-sm/7 dark:text-gray-400">
-                      {module.description}
-                    </p>
+              {modules.map((module: Module, index: number) => {
+                const courseModule = courseModules.find(
+                  (cm) => cm.id === module.id,
+                );
+                return (
+                  <PageSection
+                    key={module.id}
+                    id={module.id}
+                    title={`Part ${index + 1}`}
+                  >
+                    <div className="max-w-2xl">
+                      <h2 className="text-2xl/7 font-medium tracking-tight text-pretty text-gray-950 dark:text-white">
+                        {module.title}
+                      </h2>
+                      <p className="mt-4 text-base/7 text-gray-700 sm:text-sm/7 dark:text-gray-400">
+                        {module.description}
+                      </p>
 
-                    <ol className="mt-6 space-y-4">
-                      {module.lessons.map((lesson) => (
-                        <li key={lesson.id}>
-                          <ContentLink
-                            title={lesson.title}
-                            description={lesson.description}
-                            href={`/${lesson.id}`}
-                            type="article"
+                      {courseModule && (
+                        <div className="mt-6">
+                          <ModuleDownloadButton
+                            moduleId={courseModule.id}
+                            assets={courseModule.assets}
                           />
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                </PageSection>
-              ))}
+                        </div>
+                      )}
+
+                      <ol className="mt-6 space-y-4">
+                        {module.lessons.map((lesson) => (
+                          <li key={lesson.id}>
+                            <ContentLink
+                              title={lesson.title}
+                              description={lesson.description}
+                              href={`/${lesson.id}`}
+                              type="article"
+                            />
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  </PageSection>
+                );
+              })}
             </div>
           </div>
         </div>

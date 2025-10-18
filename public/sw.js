@@ -33,7 +33,8 @@ self.addEventListener("activate", (event) => {
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
+          // Keep app shell cache and module caches (module-*-cache pattern)
+          if (cacheName !== CACHE_NAME && !cacheName.startsWith("module-")) {
             console.log("Deleting old cache:", cacheName);
             return caches.delete(cacheName);
           }
@@ -109,4 +110,87 @@ self.addEventListener("fetch", (event) => {
         });
     }),
   );
+});
+
+// Message event - handle custom cache requests from components
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "CACHE_MODULE_ASSETS") {
+    const { moduleId, assets } = event.data;
+    const port = event.ports[0];
+
+    // Validate input
+    if (!moduleId || !Array.isArray(assets) || assets.length === 0) {
+      port.postMessage({
+        type: "CACHE_ERROR",
+        error: "Invalid module data provided",
+      });
+      return;
+    }
+
+    const moduleCacheName = `module-${moduleId}-cache`;
+
+    // Cache all module assets
+    event.waitUntil(
+      (async () => {
+        try {
+          const cache = await caches.open(moduleCacheName);
+
+          // Fetch and cache each asset
+          const cachePromises = assets.map(async (assetUrl) => {
+            try {
+              const response = await fetch(assetUrl, {
+                mode: "cors",
+                credentials: "same-origin",
+              });
+
+              // Check if response is successful
+              if (!response.ok) {
+                throw new Error(
+                  `Failed to fetch ${assetUrl}: ${response.status} ${response.statusText}`,
+                );
+              }
+
+              // Cache the response
+              await cache.put(assetUrl, response);
+              console.log(`Cached asset: ${assetUrl}`);
+            } catch (error) {
+              console.error(`Error caching asset ${assetUrl}:`, error);
+              throw error; // Re-throw to fail the entire operation
+            }
+          });
+
+          // Wait for all assets to be cached
+          await Promise.all(cachePromises);
+
+          // Send success message
+          port.postMessage({
+            type: "CACHE_COMPLETE",
+            moduleId,
+          });
+
+          console.log(`Successfully cached module: ${moduleId}`);
+        } catch (error) {
+          // Send error message
+          const errorMessage =
+            error instanceof Error
+              ? error.message
+              : "Failed to cache module assets";
+
+          port.postMessage({
+            type: "CACHE_ERROR",
+            error: errorMessage,
+          });
+
+          console.error(`Failed to cache module ${moduleId}:`, error);
+
+          // Clean up partial cache on error
+          try {
+            await caches.delete(moduleCacheName);
+          } catch (cleanupError) {
+            console.error("Failed to clean up cache:", cleanupError);
+          }
+        }
+      })(),
+    );
+  }
 });
