@@ -1,10 +1,10 @@
 # **Frontend Architecture: Course-in-a-Box PWA (MVP)**
 
-### **1\. Overview**
+## **1\. Overview**
 
 This document outlines the technical architecture for the "Course-in-a-Box" PWA. The architecture is designed to be modern, scalable, and developer-friendly, leveraging the Next.js framework to meet all requirements for this offline-first proof-of-concept. The primary technical challenge is the robust implementation of offline content storage and retrieval, which will be handled by a combination of a Service Worker and browser storage APIs.
 
-### **2\. Technology Stack**
+## **2\. Technology Stack**
 
 * **Framework:** **Next.js (App Router)** \- Provides a production-ready React framework with file-system-based routing, server components, and excellent performance optimizations.  
 * **PWA Functionality:** **next-pwa** \- A widely-used package to seamlessly integrate Progressive Web App features (Service Worker, Manifest file) into a Next.js application.  
@@ -13,7 +13,7 @@ This document outlines the technical architecture for the "Course-in-a-Box" PWA.
   * **IndexedDB:** For storing structured data, such as quiz scores, download status for each module, and audio playback positions. The idb library will be used to simplify IndexedDB transactions.  
   * **Cache API:** For storing the actual course assets (audio files, PDFs, images, etc.). This will be managed by the Service Worker.
 
-### **3\. Project Structure (Aligned with Template)**
+## **3\. Project Structure (Aligned with Template)**
 
 The project structure will be adapted to the provided Next.js template, leveraging its route groups and component organization.
 
@@ -40,7 +40,7 @@ The project structure will be adapted to the provided Next.js template, leveragi
     └── lib/  
         └── ... (existing utility files)
 
-### **4\. Data & Offline Strategy**
+## **4\. Data & Offline Strategy**
 
 The core of the application relies on an effective offline-first data strategy, integrated with the project's data structure.
 
@@ -53,6 +53,6 @@ The core of the application relies on an effective offline-first data strategy, 
   5. Upon successful caching, the component updates the module's status in IndexedDB from not-downloaded to downloaded.  
 * **Offline Serving:** The next-pwa generated Service Worker will be configured with a cache-first strategy. When an asset is requested, the Service Worker will intercept the request and serve it directly from the Cache API if available, completely bypassing the network.
 
-### **5\. State Management**
+## **5\. State Management**
 
 For this MVP, complex global state management (like Redux or Zustand) is unnecessary. Component-level state (useState, useEffect) will be sufficient to manage UI state, such as the current playback time of an audio file or the selected answers in a quiz. All persistent state (download status, scores) will be read from and written to IndexedDB.
