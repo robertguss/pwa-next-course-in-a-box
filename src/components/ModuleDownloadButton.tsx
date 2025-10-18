@@ -110,7 +110,7 @@ export function ModuleDownloadButton({
         className="inline-flex items-center gap-2 rounded-full bg-green-100 px-3.5 py-2 text-sm/6 font-semibold text-green-800 dark:bg-green-900/30 dark:text-green-400"
       >
         <CheckmarkIcon className="h-4 w-4" />
-        Downloaded
+        Offline Available
       </button>
     );
   }

@@ -4,9 +4,8 @@ import {
   Breadcrumbs,
   BreadcrumbSeparator,
 } from "@/components/breadcrumbs";
-import { ContentLink } from "@/components/content-link";
 import { Logo } from "@/components/logo";
-import { ModuleDownloadButton } from "@/components/ModuleDownloadButton";
+import { ModuleCard } from "@/components/ModuleCard";
 import { PageSection } from "@/components/page-section";
 import { SidebarLayoutContent } from "@/components/sidebar-layout";
 import { getCourseModules } from "@/data/course";
@@ -91,36 +90,7 @@ export default async function Page() {
                     id={module.id}
                     title={`Part ${index + 1}`}
                   >
-                    <div className="max-w-2xl">
-                      <h2 className="text-2xl/7 font-medium tracking-tight text-pretty text-gray-950 dark:text-white">
-                        {module.title}
-                      </h2>
-                      <p className="mt-4 text-base/7 text-gray-700 sm:text-sm/7 dark:text-gray-400">
-                        {module.description}
-                      </p>
-
-                      {courseModule && (
-                        <div className="mt-6">
-                          <ModuleDownloadButton
-                            moduleId={courseModule.id}
-                            assets={courseModule.assets}
-                          />
-                        </div>
-                      )}
-
-                      <ol className="mt-6 space-y-4">
-                        {module.lessons.map((lesson) => (
-                          <li key={lesson.id}>
-                            <ContentLink
-                              title={lesson.title}
-                              description={lesson.description}
-                              href={`/${lesson.id}`}
-                              type="article"
-                            />
-                          </li>
-                        ))}
-                      </ol>
-                    </div>
+                    <ModuleCard module={module} courseModule={courseModule} />
                   </PageSection>
                 );
               })}
