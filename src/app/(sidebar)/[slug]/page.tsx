@@ -7,9 +7,9 @@ import {
 import { NextPageLink } from "@/components/next-page-link";
 import { SidebarLayoutContent } from "@/components/sidebar-layout";
 import TableOfContents from "@/components/table-of-contents";
-import { Video } from "@/components/video-player";
 import { getLesson, getLessonContent } from "@/data/lessons";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({
@@ -55,12 +55,16 @@ export default async function Page({
     >
       <div className="mx-auto max-w-7xl">
         <div className="-mx-2 sm:-mx-4">
-          {lesson.video && (
-            <Video
-              id="video"
-              src={lesson.video.url}
-              poster={lesson.video.thumbnail}
-            />
+          {lesson.image && (
+            <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+              <Image
+                src={lesson.image}
+                alt={lesson.title}
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
           )}
         </div>
         <div className="mx-auto flex max-w-2xl gap-x-10 py-10 sm:py-14 lg:max-w-5xl">

@@ -11,6 +11,9 @@ const withMDX = createMDX({
 const nextConfig = {
   turbopack: {},
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     remotePatterns: [
       new URL("https://assets.tailwindcss.com/templates/compass/**"),

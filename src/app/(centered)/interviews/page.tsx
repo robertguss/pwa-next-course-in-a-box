@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 };
 
 export default async function InterviewsPage() {
-  let interviews = await getInterviews();
+  const interviews = await getInterviews();
 
   return (
     <CenteredPageLayout
@@ -38,9 +38,7 @@ export default async function InterviewsPage() {
           <VideoCard
             key={interview.id}
             url={`/interviews/${interview.id}`}
-            thumbnailUrl={interview.video.thumbnail}
-            videoUrl={interview.video.sd}
-            duration={interview.video.duration}
+            thumbnailUrl={interview.image}
             title={interview.name}
             subtitle={interview.subtitle}
           />

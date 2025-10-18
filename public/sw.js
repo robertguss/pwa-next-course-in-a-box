@@ -57,6 +57,17 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  // Skip video files - these will be handled by dedicated download feature later
+  const url = new URL(event.request.url);
+  const isVideo =
+    /\.(mp4|webm|ogg|mov|avi|mkv)$/i.test(url.pathname) ||
+    event.request.headers.get("accept")?.includes("video/");
+
+  if (isVideo) {
+    // Pass through to network without caching
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       // Return cached response if found

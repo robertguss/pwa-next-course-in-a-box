@@ -87,7 +87,6 @@ export default function Page() {
               url="#"
               target="_blank"
               thumbnailUrl="https://assets.tailwindcss.com/templates/compass/nietzsche-thumbnail.png"
-              duration={3720}
             />
             <VideoCard
               title="Monads & Mics with Mark Zuckerberg"
@@ -95,7 +94,6 @@ export default function Page() {
               url="#"
               target="_blank"
               thumbnailUrl="https://assets.tailwindcss.com/templates/compass/liebniz-thumbnail.png"
-              duration={4454}
             />
             <VideoCard
               title="The John Locke Show"
@@ -103,7 +101,6 @@ export default function Page() {
               url="#"
               target="_blank"
               thumbnailUrl="https://assets.tailwindcss.com/templates/compass/locke-thumbnail.png"
-              duration={5040}
             />
           </div>
         </PageSection>

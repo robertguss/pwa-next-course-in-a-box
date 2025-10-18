@@ -10,7 +10,6 @@ import { PageSection } from "@/components/page-section";
 import { SidebarLayoutContent } from "@/components/sidebar-layout";
 import { getModules, type Module } from "@/data/lessons";
 import { BookIcon } from "@/icons/book-icon";
-import { ClockIcon } from "@/icons/clock-icon";
 import { LessonsIcon } from "@/icons/lessons-icon";
 import { PlayIcon } from "@/icons/play-icon";
 import type { Metadata } from "next";
@@ -22,20 +21,9 @@ export const metadata: Metadata = {
     "A comprehensive journey that helps you navigate uncertainty and make choices aligned with your values and goals.",
 };
 
-function formatDuration(seconds: number): string {
-  let h = Math.floor(seconds / 3600);
-  let m = Math.floor((seconds % 3600) / 60);
-
-  return h > 0 ? (m > 0 ? `${h} hr ${m} min` : `${h} hr`) : `${m} min`;
-}
-
 export default async function Page() {
-  let modules = await getModules();
-  let lessons = modules.flatMap(({ lessons }) => lessons);
-  let duration = lessons.reduce(
-    (sum, { video }) => sum + (video?.duration ?? 0),
-    0,
-  );
+  const modules = await getModules();
+  const lessons = modules.flatMap(({ lessons }) => lessons);
 
   return (
     <SidebarLayoutContent
@@ -77,13 +65,6 @@ export default async function Page() {
                   <LessonsIcon className="stroke-gray-950/40 dark:stroke-white/40" />
                   {lessons.length} lessons
                 </div>
-                <span className="hidden text-gray-950/25 sm:inline dark:text-white/25">
-                  &middot;
-                </span>
-                <div className="flex items-center gap-1.5">
-                  <ClockIcon className="stroke-gray-950/40 dark:stroke-white/40" />
-                  {formatDuration(duration)}
-                </div>
               </div>
               <div className="mt-10">
                 <Link
@@ -118,8 +99,7 @@ export default async function Page() {
                             title={lesson.title}
                             description={lesson.description}
                             href={`/${lesson.id}`}
-                            type="video"
-                            duration={lesson.video?.duration}
+                            type="article"
                           />
                         </li>
                       ))}

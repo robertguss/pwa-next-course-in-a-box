@@ -9,11 +9,7 @@ export type Lesson = {
   id: string;
   title: string;
   description: string;
-  video: {
-    thumbnail: string;
-    duration: number;
-    url: string;
-  } | null;
+  image: string | null;
 };
 
 export function getModules(): Module[] {
@@ -56,50 +52,38 @@ const lessons = [
         title: "The Landscape of Choice",
         description:
           "A practical map for navigating the illusion that you actually have any agency at all.",
-        video: {
-          duration: 876,
-          thumbnail:
-            "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-01.png",
-          url: "https://assets.tailwindcss.com/templates/compass/landscape-of-choice.mp4",
-        },
+        image:
+          "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-01.png",
       },
       {
         id: "paradox-of-agency",
         title: "The Paradox of Agency",
         description:
           "Explore whether you're living your life or just reacting to everyone else's.",
-        video: null,
+        image: null,
       },
       {
         id: "liberation-from-regret",
         title: "Liberation from Regret",
         description:
           "If no alternative choice was ever possible, regret becomes logically unnecessary.",
-        video: {
-          duration: 947,
-          thumbnail:
-            "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-02.png",
-          url: "https://assets.tailwindcss.com/templates/compass/liberation-from-regret.mp4",
-        },
+        image:
+          "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-02.png",
       },
       {
         id: "recognizing-patterns",
         title: "Recognizing Patterns",
         description:
           "Failures weren't freely chosen but were inevitable given your circumstances.",
-        video: null,
+        image: null,
       },
       {
         id: "values-and-goals",
         title: "Values and Goals",
         description:
           "Identify patterns in your interests and abilities that reveal your predetermined direction.",
-        video: {
-          duration: 1328,
-          thumbnail:
-            "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-04.png",
-          url: "https://assets.tailwindcss.com/templates/compass/values-and-goals.mp4",
-        },
+        image:
+          "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-04.png",
       },
     ],
   },
@@ -114,50 +98,38 @@ const lessons = [
         title: "Mapping the Causal Factors",
         description:
           "The causes acting on you can give you insight into where they might take you.",
-        video: {
-          duration: 892,
-          thumbnail:
-            "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-03.png",
-          url: "https://assets.tailwindcss.com/templates/compass/mapping-causal-factors.mp4",
-        },
+        image:
+          "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-03.png",
       },
       {
         id: "reframing-uncertainty",
         title: "Reframing Uncertainty as Agency",
         description:
           "If you squint, not being able to predict the future looks sort of like free will.",
-        video: null,
+        image: null,
       },
       {
         id: "decision-paralysis",
         title: "Overcoming Decision Paralysis",
         description:
           "You can't be paralysed by choices you don't actually have.",
-        video: null,
+        image: null,
       },
       {
         id: "path-of-least-resistance",
         title: "Perceiving the Path of Least Resistance",
         description:
           "Recognizing which direction requires the least psychological struggle.",
-        video: {
-          duration: 1147,
-          thumbnail:
-            "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-01.png",
-          url: "https://assets.tailwindcss.com/templates/compass/path-of-least-resistance.mp4",
-        },
+        image:
+          "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-01.png",
       },
       {
         id: "surrendering-outcome",
         title: "Surrendering to the Outcome",
         description:
           "Accepting that whatever path you choose has no bearing on where you'll go.",
-        video: {
-          duration: 1423,
-          thumbnail:
-            "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-05.png",
-          url: "https://assets.tailwindcss.com/templates/compass/surrendering-outcome.mp4",
-        },
+        image:
+          "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-05.png",
       },
     ],
   },
@@ -172,40 +144,36 @@ const lessons = [
         title: "Widening Your Field of View",
         description:
           "The universe can be cruel and it's important to see that coming.",
-        video: {
-          duration: 934,
-          thumbnail:
-            "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-02.png",
-          url: "https://assets.tailwindcss.com/templates/compass/widening-field-of-view.mp4",
-        },
+        image:
+          "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-02.png",
       },
       {
         id: "dealing-with-coincidence",
         title: "Dealing with Coincidence",
         description:
           "If something does go the way you intended, realize that this was purely coincidental.",
-        video: null,
+        image: null,
       },
       {
         id: "forgiving-others",
         title: "Forgiving Others",
         description:
           "When actions are beyond one's control, punishment is illogical.",
-        video: null,
+        image: null,
       },
       {
         id: "anxiety-messages",
         title: "What Anxiety Is Trying to Tell You",
         description:
           "A lack of control can make you anxious, but realize this has no bearing on outcomes.",
-        video: null,
+        image: null,
       },
       {
         id: "maintaining-self",
         title: "Maintaining a Sense of Self",
         description:
           "Who you think you are has been assigned to you by circumstance.",
-        video: null,
+        image: null,
       },
     ],
   },
@@ -220,54 +188,38 @@ const lessons = [
         title: "Reframing Achievement and Failure",
         description:
           "Pride and regret are just psychological coping mechanisms.",
-        video: null,
+        image: null,
       },
       {
         id: "surrendering-to-success",
         title: "Surrendering to Success",
         description:
           "Achievements reveal capabilities that were always present rather than self development.",
-        video: {
-          duration: 1247,
-          thumbnail:
-            "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-02.png",
-          url: "https://assets.tailwindcss.com/templates/compass/surrendering-to-success.mp4",
-        },
+        image:
+          "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-02.png",
       },
       {
         id: "giving-credit",
         title: "Giving Credit Where it's Due",
         description:
           "Recognize the broader system that produced your achievement.",
-        video: {
-          duration: 967,
-          thumbnail:
-            "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-04.png",
-          url: "https://assets.tailwindcss.com/templates/compass/giving-credit.mp4",
-        },
+        image:
+          "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-04.png",
       },
       {
         id: "unburden-accountability",
         title: "Unburden Yourself from Accountability",
         description:
           "When things haven't gone your way, it literally couldn't have been your fault.",
-        video: {
-          duration: 1123,
-          thumbnail:
-            "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-05.png",
-          url: "https://assets.tailwindcss.com/templates/compass/unburden-accountability.mp4",
-        },
+        image:
+          "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-05.png",
       },
       {
         id: "writing-autobiography",
         title: "Exercise: Writing your autobiography",
         description: "A way to come to grips with your inconsequence.",
-        video: {
-          duration: 1486,
-          thumbnail:
-            "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-01.png",
-          url: "https://assets.tailwindcss.com/templates/compass/writing-autobiography.mp4",
-        },
+        image:
+          "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-01.png",
       },
     ],
   },
