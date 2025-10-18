@@ -40,78 +40,78 @@ const courseModules: CourseModule[] = [
       },
       // Lesson thumbnail images
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-01.png",
+        url: "/images/lesson-video-thumbnail-01.png",
         type: "image",
         size: 300000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-02.png",
+        url: "/images/lesson-video-thumbnail-02.png",
         type: "image",
         size: 300000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-04.png",
+        url: "/images/lesson-video-thumbnail-04.png",
         type: "image",
         size: 300000,
       },
       // MDX content images (light and dark variants)
       {
-        url: "https://assets.tailwindcss.com/templates/compass/perceived-options.light.png",
+        url: "/images/perceived-options.light.png",
         type: "image",
         size: 800000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/perceived-options.dark.png",
+        url: "/images/perceived-options.dark.png",
         type: "image",
         size: 800000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/maze.light.png",
+        url: "/images/maze.light.png",
         type: "image",
         size: 600000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/maze.dark.png",
+        url: "/images/maze.dark.png",
         type: "image",
         size: 600000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/libet.light.png",
+        url: "/images/libet.light.png",
         type: "image",
         size: 500000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/libet.dark.png",
+        url: "/images/libet.dark.png",
         type: "image",
         size: 500000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/behaviour-model.light.png",
+        url: "/images/behaviour-model.light.png",
         type: "image",
         size: 700000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/behaviour-model.dark.png",
+        url: "/images/behaviour-model.dark.png",
         type: "image",
         size: 700000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/behaviour-model-three.light.png",
+        url: "/images/behaviour-model-three.light.png",
         type: "image",
         size: 650000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/behaviour-model-three.dark.png",
+        url: "/images/behaviour-model-three.dark.png",
         type: "image",
         size: 650000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/behaviour-model-two.light.png",
+        url: "/images/behaviour-model-two.light.png",
         type: "image",
         size: 700000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/behaviour-model-two.dark.png",
+        url: "/images/behaviour-model-two.dark.png",
         type: "image",
         size: 700000,
       },
@@ -140,48 +140,48 @@ const courseModules: CourseModule[] = [
       },
       // Lesson thumbnail images
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-01.png",
+        url: "/images/lesson-video-thumbnail-01.png",
         type: "image",
         size: 300000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-03.png",
+        url: "/images/lesson-video-thumbnail-03.png",
         type: "image",
         size: 300000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-05.png",
+        url: "/images/lesson-video-thumbnail-05.png",
         type: "image",
         size: 300000,
       },
       // MDX content images (light and dark variants)
       {
-        url: "https://assets.tailwindcss.com/templates/compass/causal-forces.light.png",
+        url: "/images/causal-forces.light.png",
         type: "image",
         size: 700000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/causal-forces.dark.png",
+        url: "/images/causal-forces.dark.png",
         type: "image",
         size: 700000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/randomness.light.png",
+        url: "/images/randomness.light.png",
         type: "image",
         size: 900000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/randomness.dark.png",
+        url: "/images/randomness.dark.png",
         type: "image",
         size: 900000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/path-determination.light.png",
+        url: "/images/path-determination.light.png",
         type: "image",
         size: 650000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/path-determination.dark.png",
+        url: "/images/path-determination.dark.png",
         type: "image",
         size: 650000,
       },
@@ -210,38 +210,38 @@ const courseModules: CourseModule[] = [
       },
       // Lesson thumbnail images
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-02.png",
+        url: "/images/lesson-video-thumbnail-02.png",
         type: "image",
         size: 300000,
       },
       // MDX content images (light and dark variants)
       {
-        url: "https://assets.tailwindcss.com/templates/compass/coincidence.light.png",
+        url: "/images/coincidence.light.png",
         type: "image",
         size: 700000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/coincidence.dark.png",
+        url: "/images/coincidence.dark.png",
         type: "image",
         size: 700000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/anxiety.light.png",
+        url: "/images/anxiety.light.png",
         type: "image",
         size: 450000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/anxiety.dark.png",
+        url: "/images/anxiety.dark.png",
         type: "image",
         size: 450000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/jung.light.png",
+        url: "/images/jung.light.png",
         type: "image",
         size: 700000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/jung.dark.png",
+        url: "/images/jung.dark.png",
         type: "image",
         size: 700000,
       },
@@ -270,33 +270,33 @@ const courseModules: CourseModule[] = [
       },
       // Lesson thumbnail images
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-01.png",
+        url: "/images/lesson-video-thumbnail-01.png",
         type: "image",
         size: 300000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-02.png",
+        url: "/images/lesson-video-thumbnail-02.png",
         type: "image",
         size: 300000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-04.png",
+        url: "/images/lesson-video-thumbnail-04.png",
         type: "image",
         size: 300000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-05.png",
+        url: "/images/lesson-video-thumbnail-05.png",
         type: "image",
         size: 300000,
       },
       // MDX content images (light and dark variants)
       {
-        url: "https://assets.tailwindcss.com/templates/compass/success.light.png",
+        url: "/images/success.light.png",
         type: "image",
         size: 500000,
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/success.dark.png",
+        url: "/images/success.dark.png",
         type: "image",
         size: 500000,
       },
