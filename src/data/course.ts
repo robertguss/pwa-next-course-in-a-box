@@ -23,21 +23,6 @@ const courseModules: CourseModule[] = [
     description:
       "You need to know where you're starting from, before you can pretend to decide where you're going.",
     assets: [
-      {
-        url: "/audio/orientation-intro.mp3",
-        type: "audio",
-        size: 2048000, // 2MB
-      },
-      {
-        url: "/pdfs/orientation-workbook.pdf",
-        type: "pdf",
-        size: 1024000, // 1MB
-      },
-      {
-        url: "/images/orientation-cover.png",
-        type: "image",
-        size: 512000, // 512KB
-      },
       // Lesson thumbnail images
       {
         url: "/images/lesson-video-thumbnail-01.png",
@@ -123,21 +108,6 @@ const courseModules: CourseModule[] = [
     description:
       "Experience the sensation of choice without the burden of true responsibility.",
     assets: [
-      {
-        url: "/audio/direction-intro.mp3",
-        type: "audio",
-        size: 2048000, // 2MB
-      },
-      {
-        url: "/pdfs/direction-workbook.pdf",
-        type: "pdf",
-        size: 1024000, // 1MB
-      },
-      {
-        url: "/images/direction-cover.png",
-        type: "image",
-        size: 512000, // 512KB
-      },
       // Lesson thumbnail images
       {
         url: "/images/lesson-video-thumbnail-01.png",
@@ -193,21 +163,6 @@ const courseModules: CourseModule[] = [
     description:
       "Techniques for aligning with your inevitable trajectory while avoiding nihilism.",
     assets: [
-      {
-        url: "/audio/navigation-intro.mp3",
-        type: "audio",
-        size: 2048000, // 2MB
-      },
-      {
-        url: "/pdfs/navigation-workbook.pdf",
-        type: "pdf",
-        size: 1024000, // 1MB
-      },
-      {
-        url: "/images/navigation-cover.png",
-        type: "image",
-        size: 512000, // 512KB
-      },
       // Lesson thumbnail images
       {
         url: "/images/lesson-video-thumbnail-02.png",
@@ -253,21 +208,6 @@ const courseModules: CourseModule[] = [
     description:
       "How to be content with the inconsequential destiny you've been given.",
     assets: [
-      {
-        url: "/audio/destination-intro.mp3",
-        type: "audio",
-        size: 2048000, // 2MB
-      },
-      {
-        url: "/pdfs/destination-workbook.pdf",
-        type: "pdf",
-        size: 1024000, // 1MB
-      },
-      {
-        url: "/images/destination-cover.png",
-        type: "image",
-        size: 512000, // 512KB
-      },
       // Lesson thumbnail images
       {
         url: "/images/lesson-video-thumbnail-01.png",
