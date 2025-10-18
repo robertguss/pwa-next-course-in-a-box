@@ -16,6 +16,7 @@ This epic addresses the core value proposition of the Course-in-a-Box PWA: provi
 **User Value:** Students can download entire course modules once and access all content (audio, readings, PDFs, quizzes) without any internet connection for the rest of the week.
 
 **Technical Scope:**
+
 - PWA manifest and service worker setup
 - "Add to Home Screen" functionality
 - Module download system with caching strategy
@@ -39,6 +40,7 @@ This epic addresses the core value proposition of the Course-in-a-Box PWA: provi
 5. The app works offline after installation (shows cached content, not offline error page)
 
 **Technical Requirements:**
+
 - PWA manifest file configured with proper icons (192x192, 512x512), name, theme color
 - Service worker registered and activated
 - Offline fallback page configured
@@ -66,6 +68,7 @@ This epic addresses the core value proposition of the Course-in-a-Box PWA: provi
 6. The UI clearly distinguishes between "Not Downloaded", "Downloading", and "Downloaded" states
 
 **Technical Requirements:**
+
 - Download button component with state management (not-downloaded, downloading, downloaded, error)
 - Service Worker cache API integration for storing module assets
 - Module asset manifest (list of all files per module: audio, PDFs, images, quiz data)
@@ -94,6 +97,7 @@ This epic addresses the core value proposition of the Course-in-a-Box PWA: provi
 6. Downloaded content persists across app sessions (closing and reopening the app)
 
 **Technical Requirements:**
+
 - Visual indicator component for download status (icon/badge)
 - Service Worker cache-first strategy for downloaded module assets
 - Online/offline detection (navigator.onLine, service worker events)

@@ -16,6 +16,7 @@ Assessment is a critical part of the learning experience. Seminary students like
 **User Value:** Students can assess their understanding of course materials through quizzes, receive immediate feedback on their performance, and track their progress over time—all without requiring an internet connection.
 
 **Technical Scope:**
+
 - Quiz UI with multiple-choice questions
 - Answer selection and submission
 - Score calculation
@@ -48,6 +49,7 @@ Assessment is a critical part of the learning experience. Seminary students like
 10. The quiz works completely offline using cached quiz data
 
 **Technical Requirements:**
+
 - Quiz component with question/answer rendering
 - Quiz data structure: `{ quizId, questions: [{ id, questionText, answers: [{ id, text, isCorrect }] }] }`
 - Radio button or single-select UI component
@@ -80,6 +82,7 @@ Assessment is a critical part of the learning experience. Seminary students like
 9. Scoring works completely offline
 
 **Technical Requirements:**
+
 - Score calculation logic (compare selected answers to correct answers from quiz data)
 - Toast/notification component (can use Headless UI Transition for animations)
 - Toast state management (show/hide, auto-dismiss timer)
@@ -114,6 +117,7 @@ Assessment is a critical part of the learning experience. Seminary students like
 8. If score saving fails (storage error), the user is notified with a gentle error message (but quiz completion is not blocked)
 
 **Technical Requirements:**
+
 - IndexedDB integration for persistent score storage
 - Database schema: `{ quizId: string, lessonId: string, score: { correct: number, total: number, percentage: number }, completedAt: Date, selectedAnswers: { questionId: string, answerId: string }[] }`
 - Save score to IndexedDB after quiz submission

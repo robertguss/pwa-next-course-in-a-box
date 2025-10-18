@@ -16,6 +16,7 @@ Seminary students need to access various types of reading materials as part of t
 **User Value:** Students can read all course materials directly in the app without needing external PDF readers or switching between apps, and all content remains accessible offline.
 
 **Technical Scope:**
+
 - Native text reading view using existing MDX content system
 - PDF viewer component for displaying PDF documents
 - Offline support for both text and PDF content
@@ -42,6 +43,7 @@ Seminary students need to access various types of reading materials as part of t
 9. Navigation breadcrumbs or back button allows easy return to lesson list
 
 **Technical Requirements:**
+
 - Leverage existing MDX rendering system (`src/data/lessons/*.mdx`)
 - Use existing typography styles (`src/app/typography.css`)
 - Ensure MDX components (headings, paragraphs, code blocks) render correctly
@@ -75,6 +77,7 @@ Seminary students need to access various types of reading materials as part of t
 9. Large PDF files (10-20 MB) load and display without crashing the app
 
 **Technical Requirements:**
+
 - PDF viewer component (options: react-pdf, PDF.js, or native browser PDF rendering)
 - PDF file loading from Service Worker cache
 - Page navigation controls (next/previous page or scroll)

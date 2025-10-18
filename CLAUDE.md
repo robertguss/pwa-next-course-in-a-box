@@ -54,21 +54,26 @@ src/app/
 ### Content System
 
 **MDX-Based Content:**
+
 - Course lessons: `src/data/lessons.ts` + `src/data/lessons/*.mdx`
 - Interview content: `src/data/interviews.ts` + `src/data/interviews/*.mdx`
 - Type-safe data structure with async MDX imports
 - Dynamic content loading via `import('@/data/lessons/${slug}.mdx')`
 
 **Image Handling in MDX:**
+
 ```md
 # Basic image with required dimensions
+
 ![Alt text|1000x500](image.png)
 
 # Dark/light mode variants (provide both .light.png and .dark.png)
+
 ![Alt text|1000x500](image.{scheme}.png)
 ```
 
 **Content Data Structure:**
+
 ```typescript
 type Module = {
   id: string;
@@ -97,6 +102,7 @@ type Lesson = {
 **Icon Components:** 11 SVG icon components in `src/icons/`
 
 **Styling Pattern:**
+
 - Use `clsx` for conditional class composition
 - Prettier automatically sorts Tailwind classes
 - Component-level state with `useState`/`useEffect` (no global state management needed for MVP)
@@ -106,12 +112,14 @@ type Lesson = {
 The architecture is designed for offline-first functionality:
 
 **Offline Strategy:**
+
 - **Service Worker:** Cache-first strategy for assets
 - **Cache API:** Store audio files, PDFs, images per module
 - **IndexedDB:** Store quiz scores, download status, audio playback positions
 - **Download Flow:** User clicks download → component identifies assets from `src/data/course.ts` → Service Worker caches assets → IndexedDB updated with download status
 
 **Storage Pattern:**
+
 - Component-level state for UI (playback time, quiz answers)
 - IndexedDB for persistent state (download status, scores)
 - Cache API managed by Service Worker for assets
@@ -125,14 +133,16 @@ This project uses the **BMAD (Better Method for AI Development)** framework v4.4
 **Slash Commands:** Use `/BMad` prefix for BMAD commands
 
 **Documentation Structure:**
+
 - **PRD:** `docs/prd/` (sharded format v4) - Product requirements organized by epic
 - **Architecture:** `docs/architecture/` (sharded format v4) - Technical documentation
 - **QA:** `docs/qa/` - Test documentation
 - **Stories:** `docs/stories/` - User story tracking
 
 **BMAD Configuration (`.bmad-core/core-config.yaml`):**
+
 ```yaml
-markdownExploder: true          # Generates fragments for AI context
+markdownExploder: true # Generates fragments for AI context
 slashPrefix: BMad
 devDebugLog: .ai/debug-log.md
 devStoryLocation: docs/stories
@@ -143,6 +153,7 @@ architectureVersion: v4 (sharded)
 ### BMAD Workflow
 
 When working with BMAD:
+
 1. Load relevant PRD epic files from `docs/prd/epic-*.md` for feature context
 2. Reference architecture docs in `docs/architecture/` for technical constraints
 3. Create user stories in `docs/stories/` following BMAD conventions
@@ -151,9 +162,10 @@ When working with BMAD:
 ## Path Aliases
 
 TypeScript path alias configured in `tsconfig.json`:
+
 ```typescript
-import { Button } from '@/components/button'  // Resolves to src/components/button.tsx
-import { lessons } from '@/data/lessons'      // Resolves to src/data/lessons.ts
+import { Button } from "@/components/button"; // Resolves to src/components/button.tsx
+import { lessons } from "@/data/lessons"; // Resolves to src/data/lessons.ts
 ```
 
 ## Next.js Configuration
@@ -165,16 +177,19 @@ import { lessons } from '@/data/lessons'      // Resolves to src/data/lessons.ts
 ## Code Quality Standards
 
 **Prettier Configuration:**
+
 - Auto-organize imports via `prettier-plugin-organize-imports`
 - Auto-sort Tailwind classes via `prettier-plugin-tailwindcss`
 - Custom Tailwind function: `clsx`
 
 **TypeScript:**
+
 - Strict mode enabled
 - Target: ES2017
 - All components and utilities should be strongly typed
 
 **File Conventions:**
+
 - React components: PascalCase (e.g., `VideoPlayer.tsx`)
 - Utilities/data: camelCase (e.g., `lessons.ts`)
 - MDX content: kebab-case (e.g., `intro-to-react.mdx`)
@@ -182,19 +197,23 @@ import { lessons } from '@/data/lessons'      // Resolves to src/data/lessons.ts
 ## Development Notes
 
 **Content Updates:**
+
 - Lessons/interviews auto-update on save during development (hot reload)
 - New MDX files require adding to the data structure in `lessons.ts` or `interviews.ts`
 
 **Styling:**
+
 - Use Tailwind utility classes directly in components
 - Dark mode via `dark:` variant (e.g., `dark:bg-gray-900`)
 - Custom CSS in `src/app/globals.css` and `src/app/typography.css`
 
 **Syntax Highlighting:**
+
 - Shiki theme configured in `src/app/syntax-theme.json`
 - Colorized brackets enabled for code blocks in MDX
 
 **State Management:**
+
 - Component-level state for UI interactions
 - IndexedDB for persistent offline data (planned implementation)
 - No Redux/Zustand needed for MVP scope

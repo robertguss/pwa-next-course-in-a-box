@@ -16,6 +16,7 @@ Seminary students like James listen to audio lectures throughout the week while 
 **User Value:** Students can listen to course lectures at their own pace, pause at any point, and seamlessly resume from exactly where they left off—even days later or after closing the app.
 
 **Technical Scope:**
+
 - Audio playback controls (play/pause)
 - Visual progress bar with scrubbing functionality
 - Persistent playback position storage (IndexedDB)
@@ -41,6 +42,7 @@ Seminary students like James listen to audio lectures throughout the week while 
 8. When audio reaches the end, the player resets to the beginning and shows the play button
 
 **Technical Requirements:**
+
 - AudioPlayer component using HTML5 `<audio>` element
 - Play/pause button with state management (useState)
 - Audio file loading from Service Worker cache
@@ -72,6 +74,7 @@ Seminary students like James listen to audio lectures throughout the week while 
 8. Visual feedback (hover state on desktop, touch feedback on mobile) indicates the progress bar is interactive
 
 **Technical Requirements:**
+
 - Progress bar component with click and drag event handlers
 - Audio seek functionality using `audio.currentTime` setter
 - Real-time progress updates using `timeupdate` event
@@ -103,6 +106,7 @@ Seminary students like James listen to audio lectures throughout the week while 
 8. If no saved position exists, audio begins from the beginning (0:00)
 
 **Technical Requirements:**
+
 - IndexedDB integration for persistent storage of playback positions
 - Database schema: `{ lessonId: string, position: number, timestamp: Date }`
 - Auto-save playback position on pause, every 10 seconds during playback, and when audio ends
