@@ -34,7 +34,7 @@ const courseModules: CourseModule[] = [
         size: 1024000, // 1MB
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-01.png",
+        url: "/images/orientation-cover.png",
         type: "image",
         size: 512000, // 512KB
       },
@@ -57,7 +57,7 @@ const courseModules: CourseModule[] = [
         size: 1024000, // 1MB
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-03.png",
+        url: "/images/direction-cover.png",
         type: "image",
         size: 512000, // 512KB
       },
@@ -80,7 +80,7 @@ const courseModules: CourseModule[] = [
         size: 1024000, // 1MB
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-02.png",
+        url: "/images/navigation-cover.png",
         type: "image",
         size: 512000, // 512KB
       },
@@ -103,7 +103,7 @@ const courseModules: CourseModule[] = [
         size: 1024000, // 1MB
       },
       {
-        url: "https://assets.tailwindcss.com/templates/compass/lesson-video-thumbnail-04.png",
+        url: "/images/destination-cover.png",
         type: "image",
         size: 512000, // 512KB
       },
