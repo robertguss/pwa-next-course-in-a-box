@@ -7,10 +7,21 @@ import {
 import { NextPageLink } from "@/components/next-page-link";
 import { SidebarLayoutContent } from "@/components/sidebar-layout";
 import TableOfContents from "@/components/table-of-contents";
-import { getLesson, getLessonContent } from "@/data/lessons";
+import { getLesson, getLessonContent, getModules } from "@/data/lessons";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+
+// Pre-render all lesson pages at build time for offline-first PWA
+export async function generateStaticParams() {
+  const modules = getModules();
+
+  return modules.flatMap((module) =>
+    module.lessons.map((lesson) => ({
+      slug: lesson.id,
+    })),
+  );
+}
 
 export async function generateMetadata({
   params,

@@ -6,10 +6,19 @@ import {
 } from "@/components/breadcrumbs";
 import { CenteredPageLayout } from "@/components/centered-layout";
 import { NextPageLink } from "@/components/next-page-link";
-import { getInterview } from "@/data/interviews";
+import { getInterview, getInterviews } from "@/data/interviews";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+
+// Pre-render all interview pages at build time for offline-first PWA
+export async function generateStaticParams() {
+  const interviews = getInterviews();
+
+  return interviews.map((interview) => ({
+    slug: interview.id,
+  }));
+}
 
 export async function generateMetadata({
   params,

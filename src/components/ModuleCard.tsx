@@ -18,6 +18,12 @@ export function ModuleCard({ module, courseModule }: ModuleCardProps) {
   const isOnline = useOnlineStatus();
   const [downloadStatus, setDownloadStatus] =
     useState<DownloadStatus>("not-downloaded");
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Track if component is mounted (client-side only)
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Load download status from IndexedDB
   useEffect(() => {
@@ -47,7 +53,8 @@ export function ModuleCard({ module, courseModule }: ModuleCardProps) {
       )}
 
       {/* Show offline warning if user is offline and module not downloaded */}
-      {courseModule && (
+      {/* Only render after client-side mount to prevent hydration mismatch */}
+      {isMounted && courseModule && (
         <div className="mt-4">
           <OfflineWarning isDownloaded={isDownloaded} isOnline={isOnline} />
         </div>

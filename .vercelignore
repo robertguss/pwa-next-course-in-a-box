@@ -1,0 +1,8 @@
+# Vercel ignore file
+node_modules
+.next
+.bmad-core
+.claude
+.ai
+*.log
+.DS_Store
