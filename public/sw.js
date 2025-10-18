@@ -1,17 +1,14 @@
 // Service Worker for Compass PWA
-// Version 1.0.0
+// Version 1.2.0
 
-const CACHE_NAME = "compass-v1";
+const CACHE_NAME = "compass-v1.2";
 const OFFLINE_URL = "/offline";
 
 // Critical app shell resources to pre-cache
+// Only cache pages here - CSS and fonts will be cached on-demand
 const CRITICAL_ASSETS = [
   "/",
   "/offline",
-  "/globals.css",
-  "/typography.css",
-  "/InterVariable.woff2",
-  "/InterVariable-Italic.woff2",
 ];
 
 // Install event - pre-cache critical resources
@@ -138,9 +135,13 @@ self.addEventListener("message", (event) => {
           // Fetch and cache each asset
           const cachePromises = assets.map(async (assetUrl) => {
             try {
+              // Determine if this is a cross-origin request
+              const url = new URL(assetUrl, self.location.origin);
+              const isCrossOrigin = url.origin !== self.location.origin;
+
               const response = await fetch(assetUrl, {
-                mode: "cors",
-                credentials: "same-origin",
+                mode: isCrossOrigin ? "cors" : "same-origin",
+                credentials: isCrossOrigin ? "omit" : "same-origin",
               });
 
               // Check if response is successful

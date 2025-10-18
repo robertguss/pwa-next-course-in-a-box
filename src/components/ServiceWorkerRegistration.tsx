@@ -5,8 +5,8 @@ import { useEffect } from "react";
 
 export function ServiceWorkerRegistration() {
   useEffect(() => {
-    // Only register service worker in production
-    if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
+    // Register service worker in both development and production
+    if ("serviceWorker" in navigator) {
       navigator.serviceWorker
         .register("/sw.js")
         .then((registration) => {
@@ -28,9 +28,6 @@ export function ServiceWorkerRegistration() {
         .catch((error) => {
           console.error("Service Worker registration failed:", error);
         });
-    } else if (process.env.NODE_ENV !== "production") {
-      // In development, still request persistent storage for testing
-      requestPersistentStorage();
     }
   }, []);
 
